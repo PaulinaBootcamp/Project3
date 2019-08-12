@@ -20,12 +20,12 @@ function QuickAccessInstructor() {
           <p>Submitted</p>
           </Col>
            <Col size="md-2">
- <button type="button" className="btn btn-circle btn-xl">3</button>
+ <button type="button" className="btn btn-circle btn-xl">7</button>
           <p>Overdue</p>
           </Col>
            <Col size="md-2">
- <button type="button" className="btn btn-circle btn-xl">17</button>
-          <p>Submitted</p>
+ <button type="button" className="btn btn-circle btn-xl">2</button>
+          <p>Feedback</p>
           </Col>
            <Col size="md-3">
           </Col>

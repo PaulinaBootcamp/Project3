@@ -6,7 +6,7 @@ function Nav() {
     <nav className="navbar sticky-top">
    <img src="http://learning.theacademy.ac/wp-content/uploads/2017/10/tAhs-BW-340156-300x138.png" alt="The Academy at Harvard Square"></img>
       <a className="navbar-brand" href="/">
-      Login Button/Welcome Msg
+   <button type="button" className="btn login ">Login</button>
       </a>
     </nav>
   );

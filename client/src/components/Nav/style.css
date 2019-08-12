@@ -6,3 +6,8 @@ img {
   background: white;
   z-index: 1;
 }
+
+.login {
+    background: #9C081C;
+    color: white;
+}
