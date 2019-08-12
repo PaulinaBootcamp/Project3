@@ -1,0 +1,8 @@
+img {
+  height:100px;
+}
+
+.navbar {
+  background: white;
+  z-index: 1;
+}
