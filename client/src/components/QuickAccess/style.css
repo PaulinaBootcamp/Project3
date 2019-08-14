@@ -15,7 +15,7 @@
   left: 0;
   z-index: auto;
   background: linear-gradient(#333, black);
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .jumbotron .background-image {
@@ -42,4 +42,23 @@
 
 .jumbotron p {
   font-size: 30px;
+}
+
+.quick-category-btn {
+  position: center;
+  font-size: 80px;
+  border-radius: 50%;
+  margin-top: 40%;
+  height: 200px;
+  width: 200px;
+  padding: 30px;
+  text-shadow: 4px 4px #9C081C;
+  box-shadow: inset 0px 0px 60px 10px #222;
+  border: solid #222 1px;
+}
+
+h2 {
+  margin-top: 10px;
+  color: white;
+  text-shadow: 4px 4px #9C081C;
 }
