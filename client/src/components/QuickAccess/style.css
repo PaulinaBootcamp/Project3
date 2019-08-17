@@ -46,12 +46,12 @@
 
 .quick-category-btn {
   position: center;
-  font-size: 80px;
+  font-size: 100px;
   border-radius: 50%;
-  margin-top: 40%;
+  margin-top: 50%;
   height: 200px;
   width: 200px;
-  padding: 30px;
+  padding: 17px;
   text-shadow: 4px 4px #9C081C;
   box-shadow: inset 0px 0px 60px 10px #222;
   border: solid #222 1px;

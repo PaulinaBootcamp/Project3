@@ -8,11 +8,13 @@ import NoMatch from "./pages/NoMatch";
 import Assignments from "./pages/Assignments";
 import Materials from "./pages/Materials";
 import Contact from "./pages/Contact";
+import Unit from "./pages/Units";
 
 //Import Components
 import Nav from "./components/Nav";
 import NavInstructor from "./components/NavInstructor";
 import QuickAccess from "./components/QuickAccess";
+import Modal from "./components/Modal";
 
 function App() {
   return (
@@ -21,11 +23,12 @@ function App() {
 
         <Nav />
         <QuickAccess />
+        <Modal />
         <NavInstructor />
         <Switch>
-          <Route exact path="/" component={Books} />
-          <Route exact path="/books" component={Books} />
-          <Route exact path="/books/:id" component={Detail} />
+          <Route exact path="/" component={Unit} />
+          <Route exact path="/units" component={Unit} />
+          <Route exact path="/units/:id" component={Detail} />
 
 
           <Route exact path="/assignments" component={Assignments} />
