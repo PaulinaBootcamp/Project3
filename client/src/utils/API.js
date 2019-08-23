@@ -1,25 +1,7 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  getBooks: function () {
-    return axios.get("/api/books");
-  },
-  // Gets the book with the given id
-  getBook: function (id) {
-    return axios.get("/api/books/" + id);
-  },
-  // Deletes the book with the given id
-  deleteBook: function (id) {
-    return axios.delete("/api/books/" + id);
-  },
-  // Saves a book to the database
-  saveBook: function (bookData) {
-    return axios.post("/api/books", bookData);
-  },
-
-
-  // Gets all units
+   // Gets all units
   getUnits: function () {
     return axios.get("/api/units");
   },
@@ -35,11 +17,7 @@ export default {
   saveUnit: function (unitData) {
     return axios.post("/api/units", unitData);
   },
-
-
-
-
-
-
-
+ authUser: function(email, password) {
+    return axios.post("/api/user/auth", { email, password });
+  }
 };

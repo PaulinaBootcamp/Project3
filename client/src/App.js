@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //Import Pages
-import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Assignments from "./pages/Assignments";
@@ -14,17 +13,51 @@ import Unit from "./pages/Units";
 import Nav from "./components/Nav";
 import NavInstructor from "./components/NavInstructor";
 import QuickAccess from "./components/QuickAccess";
-import Modal from "./components/Modal";
+import AddUnitModal from "./components/AddUnitModal";
 
-function App() {
-  return (
+
+import API from "./utils/API";
+
+
+class App extends React.Component {
+
+  state = {
+    currentUser: undefined
+  }
+
+  handleLogin = (email, password) => {
+    API.authUser(email, password)
+       .then(resp => this.setState({ currentUser: resp.data }))
+       .catch(() => console.log("Wrong password!"));
+  }
+
+  handleLogout = () => {
+    this.setState({ currentUser: undefined });
+  }
+
+  render() {
+    if (this.state.currentUser && !this.state.currentUser.isStudent) {
+      return (
+        <div>
+          <h3>TA Mode!</h3>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div>
+          <Nav
+            user={this.state.currentUser}
+            onLogin={this.handleLogin}
+            onLogout={this.handleLogout}
+          />
+    
     <Router>
       <div>
-
-        <Nav />
         <QuickAccess />
-        <Modal />
-        <NavInstructor />
+      
+        <NavInstructor />  
+       
         <Switch>
           <Route exact path="/" component={Unit} />
           <Route exact path="/units" component={Unit} />
@@ -41,7 +74,12 @@ function App() {
       </div>
 
     </Router>
-  );
+
+
+        </div>
+      );
+    }
+  }
 }
 
 export default App;

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
+import EditBtn from "../components/EditBtn";
+import AddBtn from "../components/AddBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -7,7 +9,10 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
+import AddUnitModal from "../components/AddUnitModal";
+
 class Units extends Component {
+
   state = {
     units: [],
     title: "",
@@ -34,6 +39,18 @@ class Units extends Component {
       .catch(err => console.log(err));
   };
 
+    updateUnit = id => {
+  API.saveUnit({
+        title: this.state.title,
+        section1: this.state.section1,
+        section2: this.state.section2,
+        section3: this.state.section3
+      })
+      .then(res => this.loadUnits())
+      .catch(err => console.log(err));
+  };
+
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -56,12 +73,18 @@ class Units extends Component {
     }
   };
 
+  
+
   render() {
     return (
+  
+
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <form>
+          <Col size="md-3 sm-12">
+                 <AddUnitModal>
+
+               <form>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
@@ -93,17 +116,17 @@ class Units extends Component {
                 Add Unit
               </FormBtn>
             </form>
-          </Col>
-          <Col size="md-6 sm-12">
+             </AddUnitModal>
             {this.state.units.length ? (
               <List>
                 {this.state.units.map(unit => (
                   <ListItem key={unit._id}>
                     <Link to={"/units/" + unit._id}>
                       <strong>
-                        {unit.title} by {unit.section1}
+                        {unit.title}
                       </strong>
                     </Link>
+                    <EditBtn onClick={() => this.updateUnit(unit._id)} />
                     <DeleteBtn onClick={() => this.deleteUnit(unit._id)} />
                   </ListItem>
                 ))}
@@ -112,6 +135,10 @@ class Units extends Component {
                 <h3>No Results to Display</h3>
               )}
           </Col>
+          <Col size="md-9">
+       
+          </Col>
+          
         </Row>
       </Container>
     );
