@@ -2,8 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const flashcardSchema = new Schema({
-    flashcardName: { type: String, required: true },
-    flashcardImage: { type: String, required: true }
+    flashcardName: {
+        type: String,
+        required: true
+    },
+    flashcardImage: {
+        type: String,
+        required: true
+    }
 
 
 });
