@@ -1,4 +1,5 @@
 module.exports = {
   Unit: require("./unit"),
-   User: require("./user")
+  Flashcard: require("./flashcard"),
+  User: require("./user")
 };

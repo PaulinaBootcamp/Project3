@@ -17,14 +17,14 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+      {props.modalHeading} 
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {props.children}
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>Cancel</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -34,17 +34,16 @@ function AddUnitModal(props) {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
-    <ButtonToolbar>
+    <ButtonToolbar>     
       <Button variant="primary" onClick={() => setModalShow(true)}>
-Add Unit      
+{props.buttonContent}     
 </Button>
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-      >
+          modalHeading={props.modalHeading}    >
         {props.children}
       </MyVerticallyCenteredModal>
-      
     </ButtonToolbar>
   );
 }

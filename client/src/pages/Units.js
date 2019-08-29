@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import DeleteBtn from "../components/DeleteBtn";
-import EditBtn from "../components/EditBtn";
-import AddBtn from "../components/AddBtn";
-import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
@@ -40,7 +37,7 @@ class Units extends Component {
   };
 
     updateUnit = id => {
-  API.saveUnit({
+  API.updateUnit({
         title: this.state.title,
         section1: this.state.section1,
         section2: this.state.section2,
@@ -77,13 +74,28 @@ class Units extends Component {
 
   render() {
     return (
-  
-
       <Container fluid>
         <Row>
-          <Col size="md-3 sm-12">
-                 <AddUnitModal>
+          <Col size="md-12 sm-12">                
+            {this.state.units.length ? (
+              <List>
+                {this.state.units.map(unit => (
+                  <ListItem key={unit._id}>
+                    <Link to={"/units/" + unit._id}>
+                      <strong>
+                        {unit.title}
+                      </strong>
+                    </Link>
+                   <DeleteBtn onClick={() => this.deleteUnit(unit._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+                <h3>No Results to Display</h3>
+              )}
 
+              
+           <AddUnitModal buttonContent="Add New Unit">
                <form>
               <Input
                 value={this.state.title}
@@ -91,7 +103,7 @@ class Units extends Component {
                 name="title"
                 placeholder="Title (required)"
               />
-              <Input
+              <TextArea
                 value={this.state.section1}
                 onChange={this.handleInputChange}
                 name="section1"
@@ -117,28 +129,9 @@ class Units extends Component {
               </FormBtn>
             </form>
              </AddUnitModal>
-            {this.state.units.length ? (
-              <List>
-                {this.state.units.map(unit => (
-                  <ListItem key={unit._id}>
-                    <Link to={"/units/" + unit._id}>
-                      <strong>
-                        {unit.title}
-                      </strong>
-                    </Link>
-                    <EditBtn onClick={() => this.updateUnit(unit._id)} />
-                    <DeleteBtn onClick={() => this.deleteUnit(unit._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-                <h3>No Results to Display</h3>
-              )}
-          </Col>
-          <Col size="md-9">
-       
-          </Col>
-          
+             </Col>
+          <Col size="md-9">       
+          </Col>          
         </Row>
       </Container>
     );

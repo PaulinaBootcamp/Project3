@@ -5,13 +5,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Assignments from "./pages/Assignments";
-import Materials from "./pages/Materials";
+import Main from "./pages/Materials";
 import Contact from "./pages/Contact";
 import Unit from "./pages/Units";
 
 //Import Components
 import Nav from "./components/Nav";
 import NavInstructor from "./components/NavInstructor";
+import NavStudent from "./components/NavStudent";
 import QuickAccess from "./components/QuickAccess";
 import AddUnitModal from "./components/AddUnitModal";
 
@@ -27,8 +28,8 @@ class App extends React.Component {
 
   handleLogin = (email, password) => {
     API.authUser(email, password)
-       .then(resp => this.setState({ currentUser: resp.data }))
-       .catch(() => console.log("Wrong password!"));
+      .then(resp => this.setState({ currentUser: resp.data }))
+      .catch(() => console.log("Wrong password!"));
   }
 
   handleLogout = () => {
@@ -39,10 +40,30 @@ class App extends React.Component {
     if (this.state.currentUser && !this.state.currentUser.isStudent) {
       return (
         <div>
-          <h3>TA Mode!</h3>
+          <Nav
+            user={this.state.currentUser}
+            onLogin={this.handleLogin}
+            onLogout={this.handleLogout}
+          />
+          <Router>
+            <div>
+              <QuickAccess />
+              <NavInstructor />
+              <Switch>
+                <Route exact path="/" component={Unit} />
+                <Route exact path="/units" component={Unit} />
+                <Route exact path="/units/:id" component={Detail} />
+                <Route exact path="/assignments" component={Assignments} />
+                <Route exact path="/materials" component={Main} />
+                <Route path="/contact" component={Contact} />
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
+          </Router>
         </div>
       )
     }
+
     else {
       return (
         <div>
@@ -51,31 +72,22 @@ class App extends React.Component {
             onLogin={this.handleLogin}
             onLogout={this.handleLogout}
           />
-    
-    <Router>
-      <div>
-        <QuickAccess />
-      
-        <NavInstructor />  
-       
-        <Switch>
-          <Route exact path="/" component={Unit} />
-          <Route exact path="/units" component={Unit} />
-          <Route exact path="/units/:id" component={Detail} />
 
-
-          <Route exact path="/assignments" component={Assignments} />
-          <Route exact path="/materials" component={Materials} />
-          <Route path="/contact" component={Contact} />
-          <Route component={NoMatch} />
-        </Switch>
-
-
-      </div>
-
-    </Router>
-
-
+          <Router>
+            <div>
+              <QuickAccess />
+              <NavStudent />
+              <Switch>
+                <Route exact path="/" component={Unit} />
+                <Route exact path="/units" component={Unit} />
+                <Route exact path="/units/:id" component={Detail} />
+                <Route exact path="/assignments" component={Assignments} />
+                <Route exact path="/materials" component={Main} />
+                <Route path="/contact" component={Contact} />
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
+          </Router>
         </div>
       );
     }

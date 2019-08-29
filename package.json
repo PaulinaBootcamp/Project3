@@ -26,6 +26,8 @@
     "if-env": "^1.0.4",
     "install": "^0.13.0",
     "mongoose": "^5.3.16",
-    "react-bootstrap": "^1.0.0-beta.11"
+    "react-bootstrap": "^1.0.0-beta.11",
+    "react-flipcard": "^0.2.1",
+    "react-flippy": "^0.1.5"
   }
 }

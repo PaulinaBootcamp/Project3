@@ -40,27 +40,94 @@ db.Unit
 
 
 
-  const userSeed = [
+const userSeed = [
   {
-     name: "Erika",
-  email: "erika@test.com",
-  password:"123",
-  isStudent: false,
+    name: "Erika",
+    email: "erika@test.com",
+    password: "123",
+    isStudent: false,
     date: new Date(Date.now())
   },
   {
-  name: "Paulina",
-  email: "paulina@test.com",
-  password:"123",
-  isStudent: true,
-  date: new Date(Date.now())    
+    name: "Paulina",
+    email: "paulina@test.com",
+    password: "123",
+    isStudent: true,
+    date: new Date(Date.now())
   }
 ];
 
-  
+
 db.User
   .remove({})
   .then(() => db.User.collection.insertMany(userSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+const flashcardSeed = [
+  {
+    flashcardName: "Apple",
+    flashcardImage: "https://sc01.alicdn.com/kf/HTB1rd10aUrrK1RkSne1q6ArVVXaN/fresh-fruit-red-Fuji-apple-with-good.jpg_200x200.jpg",
+  },
+  {
+    flashcardName: "Banana",
+    flashcardImage: "https://fruits.nutriarena.com/PImg/Banana4Normal_200.jpg",
+  },
+  {
+    flashcardName: "Pear",
+    flashcardImage: "https://osmanthos.com/assets/public/images/ingredients/pear.jpg",
+  },
+  {
+    flashcardName: "Cherry",
+    flashcardImage: "https://static.turbosquid.com/Preview/001202/624/XX/3D-cherry-realistic-model_200.jpg",
+  },
+  {
+    flashcardName: "Strawberry",
+    flashcardImage: "https://s3.amazonaws.com/ucdim/wp-content/uploads/20180220163904/Feb_26_StrawberryDay_Body2_464456760-200x200.jpg",
+  },
+  {
+    flashcardName: "Erika",
+    flashcardImage: "erika@test.com",
+  }
+];
+
+
+db.Flashcard
+  .remove({})
+  .then(() => db.Flashcard.collection.insertMany(flashcardSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+
+const essaySeed = [
+  {
+    essayImage: { type: String, required: false },
+    essayInstructions: { type: String, required: true },
+    essayAssigned: { type: Boolean, default: false },
+    essayGraded: { type: Boolean, default: false },
+    essayDue: { type: Date, required: false }
+  },
+
+];
+
+
+db.Essay
+  .remove({})
+  .then(() => db.Essay.collection.insertMany(essaySeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
