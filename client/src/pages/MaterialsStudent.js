@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import Flashcard from "../components/Flashcard";
-import Vocabulary from "../components/Vocabulary";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
-import Table from 'react-bootstrap/Table'
-
 
 class Flashcards extends Component {
 
@@ -38,15 +35,13 @@ class Flashcards extends Component {
            <h3>Decks</h3>
            </Col>
       <Col size="md-9 sm-12">
-          <h3>Vocabulary</h3>
-          <Row>
-           <Col size="md-12 sm-12">
-        
+          <h3>Flashcards</h3>
+      <div>
         {this.state.flashcards.length ? (
           <div>
             {this.state.flashcards.map(flashcard => (
-              <span key={flashcard._id}>
-                <Vocabulary
+              <span  className="btn" key={flashcard._id}>
+                <Flashcard
                   title={flashcard.flashcardName}
                   imageUrl={flashcard.flashcardImage}
                 />
@@ -56,8 +51,7 @@ class Flashcards extends Component {
         ) : (
             <h3>No Results to Display</h3>
           )}
-      </Col>
-      </Row>
+      </div>
       </Col>
          
       </Row>

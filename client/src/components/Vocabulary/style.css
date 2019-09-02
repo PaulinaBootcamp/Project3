@@ -32,3 +32,8 @@
   to { transform: rotate(360deg); }
 }
 
+
+.vocab {
+    width: 50px !important;
+    margin-right:15px;
+}

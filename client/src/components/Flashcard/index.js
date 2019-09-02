@@ -31,11 +31,12 @@ const CardContents = ({ title, imageUrl }) => (
           fontSize: "12px",
           position: "absolute",
           bottom: "10px",
-          width: "100%"
+          width: "100%",
+          color: "#EB6864",
         }}
       >
         <br />
-        Hover over to show key word
+        Hover over me!
       </span>
     </FrontSide>
     <BackSide
@@ -47,7 +48,12 @@ const CardContents = ({ title, imageUrl }) => (
         flexDirection: "column"
       }}
     >
-      <h1>{title}</h1>
+      <div
+          style={{
+        marginTop: "-35px",
+          }}        
+      
+      ><h2>{title}</h2></div>
       <span
         style={{
           fontSize: "12px",
@@ -57,8 +63,8 @@ const CardContents = ({ title, imageUrl }) => (
         }}
       >
         <br />
-        <Button variant="success">Success</Button>
-        <Button variant="outline-warning">Warning</Button>
+        <Button variant="success">Next</Button>
+        <Button variant="outline-warning">Again</Button>
       </span>
     </BackSide>
   </React.Fragment>
@@ -67,8 +73,8 @@ const CardContents = ({ title, imageUrl }) => (
 class Flashcard extends Component {
   render() {
     return (
-      <div>
-        <div
+    
+        <span
           style={{
             display: "flex",
             flex: "1 0 200px",
@@ -79,8 +85,8 @@ class Flashcard extends Component {
           <Flippy flipOnHover={true} flipDirection='horizontal' style={FlippyStyle}>
             <CardContents imageUrl={this.props.imageUrl} title={this.props.title}/>
           </Flippy>
-        </div>
-      </div>
+        </span>
+  
     );
   }
 }

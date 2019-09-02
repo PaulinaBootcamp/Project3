@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../Grid";
+import "./style.css"
 
 function NavInstructor() {
   return (
+    <div className="secondaryNav">
     <ul className="nav nav-tabs sticky-top notepad">
       <li className="nav-item">
         <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
@@ -27,6 +29,7 @@ function NavInstructor() {
         </Link>
       </li>
     </ul>
+    </div>
   );
 }
 

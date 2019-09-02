@@ -8,18 +8,12 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 
 import AddUnitModal from "../components/AddUnitModal";
 import Units from "../pages/Units";
+import DeleteBtn from "../components/DeleteBtn";
 
 class Detail extends Component {
-  state = {
-    unit: {}
-  };
-
-  componentDidMount() {
-    console.log(this)
-    API.getUnit(this.props.match.params.id)
-      .then(res => this.setState({ ...res.data }))
-      .catch(err => console.log(err));
-  };
+  constructor(props) {
+    super(props);
+  }
 
    updateUnit = () => {
   API.updateUnit({
@@ -41,80 +35,39 @@ class Detail extends Component {
   };
 
   render() {
+    console.log("Details title prop " + this.props.title)
     return (
-      <Container fluid>
+         <Container fluid>    
+      {this.props.title ? (
         <Row>
-        <Col size="md-3">
-                    <Units/>
-                    </Col>
-          <Col size="md-9">
+         <Col size="md-3"> </Col>
+          <Col size="md-12">
               <h1>
-                {this.state.title}
+               {this.props.title}
               </h1>
-                        {/* </Col>
-        </Row>
-        <Row>
-          <Col size="md-9 md-offset-1"> */}
-            <article>
+             <article>
               <h3>Section 1</h3>
               <p>
-                {this.state.section1}
+                {this.props.section1}
               </p>
             </article>
             <article>
               <h3>Section 2</h3>
               <p>
-                {this.state.section2}
+                {this.props.section2}
               </p>
             </article>
             <article>
               <h3>Section 3</h3>
               <p>
-                {this.state.section3}
+                {this.props.section3}
               </p>
             </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
- <AddUnitModal buttonContent="Edit"  modalHeading= {this.state.title} >
-               <form>
-              <Input
-                value={this.state.title}                          
-
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.section1}
-                onChange={this.handleInputChange}
-                name="section1"
-                placeholder="Section One (required)"
-              />
-              <TextArea
-                value={this.state.section2}
-                onChange={this.handleInputChange}
-                name="section2"
-                placeholder="Section Two (Optional)"
-              />
-              <TextArea
-                value={this.state.section3}
-                onChange={this.handleInputChange}
-                name="section3"
-                placeholder="Section Three (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.title && this.state.section1)}
-                onClick={this.updateUnit}
-              >
-                Save Changes Unit
-              </FormBtn>
-            </form>
-             </AddUnitModal>
-            <Link to="/">← Back</Link>
-          </Col>
-        </Row>
+            </Col>  
+            </Row>
+             ) : (
+                <h1>Select Unit to Show Detail</h1>
+              )}
       </Container>
     );
   }

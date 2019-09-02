@@ -4,8 +4,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost:27017/P1"
-);
+"mongodb://heroku_l65p9lfx:7rjllpsh1qf40dcpermnc4lq27@ds311968.mlab.com:11968/heroku_l65p9lfx");
 
 const userSeed = [
   {

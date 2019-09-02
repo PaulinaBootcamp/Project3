@@ -1,10 +1,5 @@
 .list-overflow-container {
-  margin-top: 50px;
-  /* max-height: 545px; */
-  /* border: 1px #DDDDDD solid; */
-  /* border-radius: 4px; */
-  /* overflow-y: scroll;
-  overflow-x: hidden; */
+margin-left:-20px;
 }
 
 .list-overflow-container ul {
@@ -31,4 +26,10 @@
 
 .list-overflow-container li:last-child {
   border-bottom: none;
+}
+.unit {
+  color:white;
+  width: 250px;
+  text-align: left;
+  background-color: #EB6864;
 }
