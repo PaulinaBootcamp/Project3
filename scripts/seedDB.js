@@ -40,67 +40,94 @@ const flashcardSeed = [
   {
     flashcardName: "Apple",
     flashcardImage: "https://sc01.alicdn.com/kf/HTB1rd10aUrrK1RkSne1q6ArVVXaN/fresh-fruit-red-Fuji-apple-with-good.jpg_200x200.jpg",
+   flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Banana",
     flashcardImage: "https://fruits.nutriarena.com/PImg/Banana4Normal_200.jpg",
+   flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Pear",
     flashcardImage: "https://osmanthos.com/assets/public/images/ingredients/pear.jpg",
+   flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Cherry",
     flashcardImage: "https://static01.nyt.com/newsgraphics/2014/06/16/bittman-eat-cherry/ed5c4f4c098cd142650d7c00014e71abf85d2f86/eatopener_cherry.jpg",
+  flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Strawberry",
     flashcardImage: "https://s3.amazonaws.com/ucdim/wp-content/uploads/20180220163904/Feb_26_StrawberryDay_Body2_464456760-200x200.jpg",
+   flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Kiwi",
     flashcardImage: "https://secureservercdn.net/160.153.137.218/4b3.e44.myftpupload.com/wp-content/uploads/2007/01/Kiwi-fruit1.jpg?time=1566426384",
+    flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Orange",
     flashcardImage: "https://producemadesimple.ca/wp-content/uploads/2015/01/orange-web-600x450.jpg",
+    flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Watermelon",
     flashcardImage: "https://images-na.ssl-images-amazon.com/images/I/812c9h8-zuL._SY355_.jpg",
+    flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Peach",
     flashcardImage: "https://cdn-prod.medicalnewstoday.com/content/images/articles/274/274620/two-peaches.jpg",
+    flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Pineapple",
     flashcardImage: "https://keelings.ie/wp-content/uploads/2016/04/pineapple-1.jpg",
+    flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Grapes",
     flashcardImage: "https://verduragroceries.co.ke/wp-content/uploads/2018/07/seedless-grapes.jpg",
+    flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Coconut",
     flashcardImage: "https://s3.amazonaws.com/ucdim/wp-content/uploads/20180220163904/Feb_26_StrawberryDay_Body2_464456760-200x200.jpg",
+   flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Goosenberry",
     flashcardImage: "https://gofreshusa.com/wp-content/uploads/2018/02/Depositphotos_118813434_original-1024x683.jpg",
+     flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Black Currant",
     flashcardImage: "https://www.znaturalfoods.com/710-large_default/black-currant-powder.jpg",
+    flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Mango",
     flashcardImage: "https://www.thegrowthop.com/wp-content/uploads/2019/02/GettyImages-484472040-e1549992026214.jpg",
+    flashcardCategory: "Fruits"
   },
   {
     flashcardName: "Raspberry",
     flashcardImage: "https://milnefruit.com/images/products/raspberry.png",
-  }
+    flashcardCategory: "Fruits"
+  },
+ {
+    flashcardName: "Bell Pepper",
+    flashcardImage: "https://images.heb.com/is/image/HEBGrocery/prd-small/fresh-red-bell-peppers-000325164.jpg",
+    flashcardCategory: "Vegetables"
+  },
+   {
+    flashcardName: "Broccoli",
+    flashcardImage: "http://www.allwhitebackground.com/images/2/2385-190x190.png",
+    flashcardCategory: "Vegetables"
+  },
+
 ];
 
 

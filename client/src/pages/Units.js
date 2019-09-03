@@ -37,10 +37,15 @@ class Units extends Component {
   getUnit = (id) => {
     console.log("here" + id);
      API.getUnit(id)
-      .then(res => this.setState({ unit: res.data }))
+      .then(res => this.setState(
+        { unit: res.data, 
+          title: res.data.title, 
+          section1: res.data.section1,
+          section2: res.data.section2, 
+          section3: res.data.section3}))
       .catch(err => console.log(err));
 
-      console.log(this.state.unit._id);
+      console.log(id);
   };
    
 
@@ -57,8 +62,8 @@ class Units extends Component {
       .catch(err => console.log(err));
   };
 
-    updateUnit = id => {
-  API.updateUnit({
+  updateUnit = id => {
+    API.updateUnit({
         title: this.state.title,
         section1: this.state.section1,
         section2: this.state.section2,
@@ -75,6 +80,15 @@ class Units extends Component {
       [name]: value
     });
   };
+
+  handleInputChangeEdit = event => {
+    const { name, value } = event.target;
+  console.log(name, value)
+    this.setState({
+      [name]: value
+    });
+  };
+
 
   handleFormSubmit = event => {
     
@@ -106,30 +120,30 @@ class Units extends Component {
                   </button>
                       <div>      
                       <DeleteBtn onClick={() => this.deleteUnit(unit._id)} />
-                      <EditUnitModal buttonContent="Edit"  modalHeading= {this.state.unit.title} >
+
+              <EditUnitModal buttonContent="Edit"  modalHeading= {unit.title} >
                <form>
               <Input
                 value={unit.title}                          
-
-                onChange={this.handleInputChange}
+                onChange={this.handleInputChangeEdit }
                 name="title"
                 placeholder="Title (required)"
               />
               <Input
                 value={unit.section1}
-                onChange={this.handleInputChange}
+                onChange={this.handleInputChangeEdit }
                 name="section1"
                 placeholder="Section One (required)"
               />
               <TextArea
                 value={unit.section2}
-                onChange={this.handleInputChange}
+                onChange={this.handleInputChangeEdit }
                 name="section2"
                 placeholder="Section Two (Optional)"
               />
               <TextArea
                 value={unit.section3}
-                onChange={this.handleInputChange}
+                onChange={this.handleInputChangeEdit }
                 name="section3"
                 placeholder="Section Three (Optional)"
               />
@@ -142,8 +156,7 @@ class Units extends Component {
             </form>          
            </EditUnitModal>
           </div>
-           
-                  </ListItem>
+          </ListItem>
                 ))}
               </List>
             ) : (
