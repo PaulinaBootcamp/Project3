@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"
 
 function extractLoginInfoAndCallParent(onLogin) {
     const userEmail = document.getElementById("userEmail").value;
@@ -13,8 +14,8 @@ function Login(props) {
     if (props.user === undefined) {
         widget = (
             <div>
-                <input id="userEmail" name="email" placeholder="Email"></input>
-                <input id="userPassword" name="password" type="password" placeholder="Password"></input>
+                <input class="logininput" id="userEmail" name="email" placeholder="  Email"></input>
+                <input class="logininput" id="userPassword" name="password" type="password" placeholder="  Password"></input>
 
                  <button type="button" class="btn btn-info" onClick={() => extractLoginInfoAndCallParent(props.onLogin) }>Login</button>
 
@@ -24,8 +25,8 @@ function Login(props) {
         console.log(props.user);
         widget = (
             <div>
-                <h3>Welcome back, {props.user.name}</h3>
-                <button onClick={props.onLogout}>Logout</button>
+                <span class="h2mod">Welcome back, {props.user.name}! <button class="btn btn-info loginbtn" onClick={props.onLogout}>Logout</button></span>
+               
             </div>
         );
     }

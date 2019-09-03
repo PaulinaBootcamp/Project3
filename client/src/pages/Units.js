@@ -99,7 +99,7 @@ class Units extends Component {
             {this.state.units.length ? (
               <List>
                 {this.state.units.map(unit => (
-                  <ListItem    key={unit._id}>
+                  <ListItem key={unit._id}>
                   <button 
                   className="btn unit" onClick={() => this.getUnit(unit._id)}>{unit.title}
                   

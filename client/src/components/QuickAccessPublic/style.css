@@ -16,7 +16,7 @@
   left: 0;
   z-index: auto;
   background: linear-gradient(#333, black);
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .jumbotron .background-image {
@@ -58,9 +58,16 @@
   border: solid #222 1px;
 }
 
-h2 {
-  margin-top: 10px;
+
+.overlayText {
+  margin-top: 17%;
   color: white;
   text-shadow: 3px 3px #9C081C;
+  font-size: 70px;
 }
 
+.welcometxt {
+  margin-top: 10px;
+  color: white;
+  font-size: 30px;
+}

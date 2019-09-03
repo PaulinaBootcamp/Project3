@@ -8,23 +8,26 @@ import AddUnitModal from "./../AddUnitModal";
 
 function QuickAccess() {
   return (
-     <div>
-      <div className=" text-center">
-      <h2> WELCOME TO THE ACADEMY.</h2>
-           <h3 className="overlayText">
-The Academy at Harvard Square (TAHS) is an institution for global citizenship education.
-
-TAHS (HSA Corporation) is located in the academically prestigious area of Harvard Square. TAHS provides educational programs to international students, professionals, and public/private organizations. With over a decade of experience, TAHS designs programs that enable individuals to achieve their academic and professional goals through acquiring a global mindset.
-         </h3></div>
+    <div>
     <div className="jumbotron text-center">
       <div className="overlay">
       </div>
       <div className="background-image">
             <ContainerCenter>
-        
-      </ContainerCenter></div>
+        <Row>
+         <Col size="md-2"> </Col>
+          <Col size="md-8">             
+                   <div className="overlayText"> WELCOME TO THE ACADEMY</div>
+                    <div className="welcometxt"> Please log in to access your materials</div>
+             
+               
+                 
+          </Col>
+        </Row>
 
-    </div>
+      </ContainerCenter></div>
+      </div>
+
     </div>
   );
 }
