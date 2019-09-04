@@ -12,7 +12,7 @@ const FlippyStyle = {
   justifyContent: "center"
 };
 
-const CardContents = ({ title, imageUrl }) => (
+const CardContents = ({ title, imageUrl, handleAddToDeck }) => (
   <React.Fragment>
     <FrontSide
       style={{
@@ -49,10 +49,10 @@ const CardContents = ({ title, imageUrl }) => (
       }}
     >
       <div
-          style={{
-        marginTop: "-35px",
-          }}        
-      
+        style={{
+          marginTop: "-35px",
+        }}
+
       ><h2>{title}</h2></div>
       <span
         style={{
@@ -63,8 +63,7 @@ const CardContents = ({ title, imageUrl }) => (
         }}
       >
         <br />
-        <Button variant="success">Next</Button>
-        <Button variant="outline-warning">Again</Button>
+        <Button onClick={this.handleAddToDeck} variant="success">Add to My Deck</Button>
       </span>
     </BackSide>
   </React.Fragment>
@@ -73,20 +72,20 @@ const CardContents = ({ title, imageUrl }) => (
 class Flashcard extends Component {
   render() {
     return (
-    
-        <span
-          style={{
-            display: "flex",
-            flex: "1 0 200px",
-            justifyContent: "space-around",
-            "flex-wrap": "wrap"
-          }}
-        >
-          <Flippy flipOnHover={true} flipDirection='horizontal' style={FlippyStyle}>
-            <CardContents imageUrl={this.props.imageUrl} title={this.props.title}/>
-          </Flippy>
-        </span>
-  
+
+      <span
+        style={{
+          display: "flex",
+          flex: "1 0 200px",
+          justifyContent: "space-around",
+          "flex-wrap": "wrap"
+        }}
+      >
+        <Flippy flipOnHover={true} flipDirection='horizontal' style={FlippyStyle}>
+          <CardContents imageUrl={this.props.imageUrl} title={this.props.title} handleAddToDeck={this.props.handleAddToDeck} />
+        </Flippy>
+      </span>
+
     );
   }
 }
