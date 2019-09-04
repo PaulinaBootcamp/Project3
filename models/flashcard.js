@@ -9,6 +9,10 @@ const flashcardSchema = new Schema({
     flashcardImage: {
         type: String,
         required: true
+    },
+    flashcardCategory: {
+        type: String,
+        required: true
     }
 
 

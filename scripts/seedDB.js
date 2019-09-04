@@ -180,6 +180,27 @@ const unitSeed = [
     section2: "Put the cards back on the board, at a height that everyone can reach. Model the game first – select a student and say `Touch put on my shoes`. The student should go to the board and touch the correct card. Then get the student to do the same for you. When everyone has got the idea put them in pairs and get each pair to stand at the other end of the room. In pairs, each student says a verb phrase as their partner runs to the board and touches the right card.",
     section3: "To finish the class, get together the morning routines flashcards and also any other action verb flashcards you have used in previous lessons. Divide the class into 2 teams. One student comes to the front of the class and acts out the flashcard you show to him/her. The first person to shout out the correct answer wins a point for his/her team.",
     date: new Date(Date.now())
+  },
+    {
+    title: "Fruit",
+    section1: "If you can, get small plastic fruit (can be bought quite cheaply from children’s stores, such as Toys ‘R’ Us). Put the 8 fruit into a small box before the class. Now take out the box and shake it – the rattling sound will instantly alert your students. Open the box and pull out a fruit. Ask What’s this? Elicit / Teach the name and chorus x3. Now mime biting the fruit and chewing, and then say Yummy!. Then hold the fruit in front of each student to let them take an imaginary bite. Encourage them to say yummy! or even yuk!. Repeat with the other fruit.",
+    section2: "Try and take enough plastic fruit pieces for each student (e.g. if you have 16 students you need two of each plastic fruit – if you don’t have enough plastic fruit use our fruit flashcards instead). Throw the fruit around the classroom. Model the activity: say (Your name) give me a/an (apple). Get up, find the fruit and put it into the box. Now hold the box and instruct a student to pick up a fruit, bring it back to you and put it in the box. Do for each student in the class.",
+    section3: "Play Fruit Rope Jump game Play 'Fruit Rope Jump' gameTake a length of rope, and lay it across the floor at one end of the classroom. On one side place the 8 plastic fruit and the box. Have your students line up on the other side of the rope. Model: '(Your name), put the (apple) in the box'. Run up to the rope, jump over the rope (say 'Jump!') select the correct fruit and put it in the box. Now instruct each student to do the activity.",
+    date: new Date(Date.now())
+  },
+    {
+    title: "Emotion",
+    section1: "On the board draw a large circle. Then draw two eyes, ears, nose and a smiley mouth. Do the same facial gesture and say ‘I’m happy! Happy, happy, happy’. Get everyone to chorus ‘happy’ and do the facial expression. Then erase the mouth and draw a sad mouth (and maybe a tear under one eye) and teach ‘sad’. Do the same for the rest of the vocab (hungry, angry, scared, sleepy - use the flashcards as reference).",
+    section2: "Invite a student up to the front of the class and give him/her the chalk/marker. Whisper a feelings word (e.g. ‘angry’) and get him/her to draw the face in the circle. If he/she is having difficulty, show him a picture or flashcard. Invite the class to shout out the answers – the first student with the correct answer can draw the next picture.",
+    section3: "Put students in pairs and give each pair a large, blanksheet of paper. Have each pair draw circles on the paper. Then have them in turns draw faces with different emotions for their partners to guess. At the end of the activity invite some students to show the rest of the class their pictures and say what the feeling words are (or get the others to guess).",
+    date: new Date(Date.now())
+  },
+    {
+    title: "World",
+    section1: "Walk around the room and stick the pieces of colored paper to the walls as you walk around. Say each color word as you stick them onto the walls and make sure they are at a level your students can reach.Now model the game: say ‘Touch green!’ and show everyone how you look around the walls for the green paper, then run and touch it. Encourage your students to do the same. Now have everyone stand up in the middle of the room. Say different colors as your students run around touching the colors.",
+    section2: "Get a big piece of blank paper (A3 or bigger if possible). Have everyone sit in a circle around the paper with their crayons. Say, ‘Everyone draw a (blue) line’, and model taking out a blue crayon, drawing a nice blue line on the paper and then putting the crayon back into your pencil case. Get everyone to follow suit. Continue with all the colors. In the end you will have a nice abstract piece of artwork!",
+    section3: "Now we have two defined categories (sky and land) we are going to provide some new words for those categories. Before class, prepare two large A4 envelopes (color one green for land and one blue for sky) and flashcards for sun, moon, stars, mountain, sea, river, cloud, rainbow, lakes, fields, forest. Pin both of the envelopes to the wall, opened, with the green one low down on the wall (to represent land) and the blue one higher up (to represent sky).",
+    date: new Date(Date.now())
   }
 ];
 
