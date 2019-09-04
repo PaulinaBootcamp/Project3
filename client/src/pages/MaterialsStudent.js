@@ -1,5 +1,5 @@
-import React, { Component } from "react";
 import Flashcard from "../components/Flashcard";
+import React, { Component } from "react";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 
@@ -11,6 +11,7 @@ class Flashcards extends Component {
     flashcardImage: "",
     flipped: false,
     selectedCategory: undefined,
+    currentCardIdx: 0,
     categories: new Set()
   };
 
@@ -32,17 +33,26 @@ class Flashcards extends Component {
       .catch(err => console.log(err));
   };
 
+  handleCategory = (category) => {
+    if (this.state.selectedCategory === category) {
+      this.setState({ selectedCategory: undefined })
+    } else {
+      this.setState({ selectedCategory: category })
+    }
+  }
 
   render() {
-    console.log(Array.from(this.state.categories.values())); return (
+    return (
       <Container>
         <Row>
           <Col size="md-3 sm-12">
             <h3>Decks</h3>
-            {Array.from(this.state.categories).map(category => <p>{category}</p>)}
-            {/* <button 
-               className="btn unit" onClick={() => this.setState}>{unit.title}
-            </button> */}
+            {Array.from(this.state.categories).map(category =>
+              <button
+                className="btn unit"
+                onClick={() => this.handleCategory(category)}>{category}
+              </button>
+            )}
 
           </Col>
           <Col size="md-9 sm-12">
@@ -50,17 +60,16 @@ class Flashcards extends Component {
             <div>
               {this.state.flashcards.length ? (
                 <div>
-                  {this.state.flashcards.filter(flashcard =>
+                  {this.state.flashcards.filter((flashcard, idx) =>
                     this.state.selectedCategory === undefined ||
                     flashcard.flashcardCategory === this.state.selectedCategory
-                  ).map(flashcard => (
-                    <span className="btn" key={flashcard._id}>
+                  ).map(flashcard =>
+                    (<span className="btn" key={flashcard._id}>
                       <Flashcard
                         title={flashcard.flashcardName}
                         imageUrl={flashcard.flashcardImage}
                       />
-                    </span>
-                  ))}
+                    </span>))}
                 </div>
               ) : (
                   <h3>No Results to Display</h3>
