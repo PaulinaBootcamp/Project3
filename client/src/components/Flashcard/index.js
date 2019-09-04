@@ -12,7 +12,10 @@ const FlippyStyle = {
   justifyContent: "center"
 };
 
-const CardContents = ({ title, imageUrl, handleAddToDeck }) => (
+
+const CardContents = ({ title, imageUrl }) => (
+
+
   <React.Fragment>
     <FrontSide
       style={{
@@ -63,7 +66,7 @@ const CardContents = ({ title, imageUrl, handleAddToDeck }) => (
         }}
       >
         <br />
-        <Button onClick={this.handleAddToDeck} variant="success">Add to My Deck</Button>
+        <Button  variant="success">Add to My Deck</Button>
       </span>
     </BackSide>
   </React.Fragment>
@@ -82,7 +85,7 @@ class Flashcard extends Component {
         }}
       >
         <Flippy flipOnHover={true} flipDirection='horizontal' style={FlippyStyle}>
-          <CardContents imageUrl={this.props.imageUrl} title={this.props.title} handleAddToDeck={this.props.handleAddToDeck} />
+          <CardContents imageUrl={this.props.imageUrl} title={this.props.title} />
         </Flippy>
       </span>
 

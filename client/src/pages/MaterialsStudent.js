@@ -41,9 +41,7 @@ class Flashcards extends Component {
     }
   }
 
-  handleAddToDeck = () => {
-    console.log("added to deck btn clicked")
-  }
+
 
   render() {
     return (
@@ -72,7 +70,7 @@ class Flashcards extends Component {
                       <Flashcard
                         title={flashcard.flashcardName}
                         imageUrl={flashcard.flashcardImage}
-                        handleAddToDeck={this.handleAddToDeck}
+                       
                       />
                     </span>))}
                 </div>

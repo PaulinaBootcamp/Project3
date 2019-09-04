@@ -6,6 +6,11 @@ mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://heroku_l65p9lfx:7rjllpsh1qf40dcpermnc4lq27@ds311968.mlab.com:11968/heroku_l65p9lfx");
 
+
+// mongoose.connect(
+//   process.env.MONGODB_URI ||
+//   "mongodb://localhost/P1");
+
 const userSeed = [
   {
     name: "Erika",
