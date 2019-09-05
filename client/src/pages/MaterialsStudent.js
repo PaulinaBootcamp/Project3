@@ -2,6 +2,8 @@ import Flashcard from "../components/Flashcard";
 import React, { Component } from "react";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
+import AddUnitModal from "../components/AddUnitModal";
+import { Input, TextArea, FormBtn } from "../components/Form";
 
 class Flashcards extends Component {
 
@@ -15,6 +17,26 @@ class Flashcards extends Component {
     categories: new Set()
   };
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    
+    if (this.state.flashcardName && this.state.flashcardImage) {
+      console.log("this is new flashcard" + this.state.flashcardName)
+      API.saveFlashcard({
+        flashcardName: this.state.flashcardName,
+        flashcardImage: this.state.flashcardImage,
+        selectedCategory: this.state.selectedCategory
+      })
+        .then(res => this.loadFlashcards())
+        .catch(err => console.log(err));
+    }
+  };  
 
   componentDidMount() {
     this.loadFlashcards();
@@ -22,13 +44,12 @@ class Flashcards extends Component {
 
   loadFlashcards = () => {
     API.getFlashcards()
-      .then(res => {
-        // console.log(res.data);        
+      .then(res => {      
 
         res.data.forEach(flashcard => this.state.categories.add(flashcard.flashcardCategory));
 
         this.setState({ flashcards: res.data, flashcardName: "", flashcardImage: "", categories: this.state.categories })
-        // console.log("flashhhhhhhhhh" + JSON.stringify(this.state.flashcards));
+        
       })
       .catch(err => console.log(err));
   };
@@ -55,6 +76,36 @@ class Flashcards extends Component {
                 onClick={() => this.handleCategory(category)}>{category}
               </button>
             )}
+
+              <AddUnitModal buttonContent="New Card">
+               <form>
+              <Input
+                value={this.state.flashcardName}
+                onChange={this.handleInputChange}
+                name="flashcardName"
+                placeholder="Word"
+              />
+              <TextArea
+                value={this.state.flashcardImage}
+                onChange={this.handleInputChange}
+                name="flashcardImage"
+                placeholder="Image Link"
+              />
+              <TextArea
+                value={this.state.flashcardCategory}
+                onChange={this.handleInputChange}
+                name="flashcardCategory"
+                placeholder="Category"
+              />
+            
+              <FormBtn
+                disabled={!(this.state.flashcardName && this.state.flashcardImage)}
+                onClick={this.handleFormSubmit}
+              >
+                Add Card
+              </FormBtn>
+            </form>
+             </AddUnitModal>
 
           </Col>
           <Col size="md-9 sm-12">
