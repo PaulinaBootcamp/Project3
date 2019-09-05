@@ -14,7 +14,8 @@ class Flashcards extends Component {
     flipped: false,
     selectedCategory: undefined,
     currentCardIdx: 0,
-    categories: new Set()
+    categories: new Set(),
+
   };
 
   handleInputChange = event => {
@@ -61,6 +62,11 @@ class Flashcards extends Component {
       this.setState({ selectedCategory: category })
     }
   }
+
+  handleClick = () => {
+    this.setState({
+      condition: !this.state.condition
+    })};
 
 
 

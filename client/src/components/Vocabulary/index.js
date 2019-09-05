@@ -9,7 +9,7 @@ import Badge from 'react-bootstrap/Badge'
 
 const VocabularyListItem = ({ title, imageUrl }) => (
   <React.Fragment>
-    <Badge variant="light"><Image className="vocab" src={imageUrl} roundedCircle  />
+    <Badge variant="light"><Image className="vocab" src={imageUrl}   />
     {title}
   </Badge>  
   </React.Fragment>
@@ -18,7 +18,14 @@ const VocabularyListItem = ({ title, imageUrl }) => (
 class Vocabulary extends Component {
   render() {
     return (
+      <Container>
+      <Row>
+        <Col size="md-6 sm-12">
             <VocabularyListItem imageUrl={this.props.imageUrl} title={this.props.title}/>
+               
+               </Col>
+               </Row>
+               </Container>
                );
   }
 }

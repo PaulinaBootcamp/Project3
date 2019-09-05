@@ -128,11 +128,6 @@ const flashcardSeed = [
     flashcardCategory: "Vegetables"
   },
   {
-    flashcardName: "Broccoli",
-    flashcardImage: "http://www.allwhitebackground.com/images/2/2385-190x190.png",
-    flashcardCategory: "Vegetables"
-  },
-  {
     flashcardName: "Onion",
     flashcardImage: "https://images.freshop.com/111474/e2b6d602c1a4bf6c4d70a2c3c40e28d5_medium.png",
     flashcardCategory: "Vegetables"

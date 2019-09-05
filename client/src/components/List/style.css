@@ -32,4 +32,13 @@ margin-left:-20px;
   width: 250px;
   text-align: left;
   background-color: #EB6864;
+  /* margin-top: 2px; */
+  margin-bottom: 10px;
+}
+
+.unit:active {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  outline: 0;
 }

@@ -42,44 +42,44 @@ class App extends React.Component {
   render() {
     if (this.state.currentUser === undefined) {
      return (
-        // <div>
-        //   <Nav
-        //     user={this.state.currentUser}
-        //     onLogin={this.handleLogin}
-        //     onLogout={this.handleLogout}
-        //   />
-        //   <Router>
-        //     <div>
-        //       <QuickAccessPublic />
-             
-                             
-        //     </div>
-        //   </Router>
-        // </div>
-
-         <div>
+        <div>
           <Nav
             user={this.state.currentUser}
             onLogin={this.handleLogin}
             onLogout={this.handleLogout}
           />
-
           <Router>
             <div>
-              <QuickAccess />
-              <NavStudent />
-              <Switch>
-                <Route exact path="/" component={Unit} />
-                <Route exact path="/units" component={Unit} />
-                <Route exact path="/units/:id" component={Detail} />
-                <Route exact path="/assignments" component={Assignments} />
-                <Route exact path="/materials" component={MaterialsStudent} />
-                <Route path="/contact" component={Contact} />
-                <Route component={NoMatch} />
-              </Switch>
+              <QuickAccessPublic />
+             
+                             
             </div>
           </Router>
         </div>
+
+        //  <div>
+        //   <Nav
+        //     user={this.state.currentUser}
+        //     onLogin={this.handleLogin}
+        //     onLogout={this.handleLogout}
+        //   />
+
+        //   <Router>
+        //     <div>
+        //       <QuickAccess />
+        //       <NavStudent />
+        //       <Switch>
+        //         <Route exact path="/" component={Unit} />
+        //         <Route exact path="/units" component={Unit} />
+        //         <Route exact path="/units/:id" component={Detail} />
+        //         <Route exact path="/assignments" component={Assignments} />
+        //         <Route exact path="/materials" component={MaterialsStudent} />
+        //         <Route path="/contact" component={Contact} />
+        //         <Route component={NoMatch} />
+        //       </Switch>
+        //     </div>
+        //   </Router>
+        // </div>
       )
     }
 

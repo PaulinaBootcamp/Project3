@@ -37,7 +37,7 @@ class Detail extends Component {
   render() {
     console.log("Details title prop " + this.props.title)
     return (
-         <Container fluid>    
+         <Container >    
       {this.props.title ? (
         <Row>
          <Col size="md-3"> </Col>
